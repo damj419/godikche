@@ -1,0 +1,760 @@
+@charset "utf-8";
+
+/* layout */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background: #000;
+}
+.wrap {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    color: #fff;
+    background: #000;
+    width: 100%;
+}
+
+.visual {
+    width: 100%;
+    height: 100vh;
+    padding-top: 90px;
+    box-sizing: border-box;
+    position: relative;
+    letter-spacing: -1px;
+}
+.visual .mainText {
+    font-size: 140px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0 0 100px 150px;
+    display: inline-block;
+}
+.visual .mainText p {
+    overflow: hidden;
+}
+.visual .en2 {
+    letter-spacing: -4px;
+}
+.visual .subText {
+    position: absolute;
+    bottom: 15%;
+    left: 60%;
+}
+.scroll {
+    position: fixed;
+    left: 60px;
+    bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* animation */
+.visual.motion .mainText {
+    transform: translate3d(0,0,0) skewY(0deg);
+    overflow: hidden;
+}
+.visual.motion .mainText p span {
+    display: block;
+    animation: textAni 1.8s;
+}
+.visual.motion .mainText p:nth-child(2) span {
+    animation-duration: 1.7s;
+}
+.visual.motion .mainText p:nth-child(3) span {
+    animation-duration: 1.5s;
+}
+@keyframes textAni {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+        transform: translate3d(0,-90px,0) skewY(-10deg);
+        transform-origin: top left;
+    }
+}
+
+.visual.motion .subText {
+    animation: textAni2 2.8s;
+}
+@keyframes textAni2 {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+        transform: translate3d(0,-50px,0) skewY(-5deg);
+        transform-origin: top left;
+    }
+}
+
+.svgAni {
+    position: absolute;
+    width: 53%;
+    right: 5%;
+    top: 3%;
+}
+/* svg Ani */
+.visual.motion #svgAni01 {
+    stroke-dasharray: 3182;
+    stroke-dashoffset: 3190;
+    animation: ani1 2.5s linear 0.1s forwards;
+}
+@keyframes ani1 {
+    0% {
+        stroke-dashoffset: 3182;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.visual.motion #svgAni02 {
+    stroke-dasharray: 25;
+    stroke-dashoffset: -25;
+    animation: ani2 .5s linear 1.25s forwards;
+}
+@keyframes ani2 {
+    0% {
+        display: none;
+    }
+    50% {
+        display: block;
+        stroke-dashoffset: -25;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+/* con01 */
+.con01 {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    margin-top: 200px;
+}
+.videoWrap video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.con01 .title {
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+}
+.title h2 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 80px;
+}
+.title .text {
+    color: #ddd;
+    line-height: 1.5;
+}
+/* .con02 */
+
+.con02 {
+    width: 100vw;
+    margin-bottom: 400px;
+}
+.con02 .title {
+    width: 100%;
+    height: 100vh;
+    font-size: 170px;
+    line-height: 0.9;
+    text-align: center;
+    padding-top: 30vh;
+    opacity: 0.3;
+}
+.con02 .title .en2 {
+    font-size: 220px;
+}
+.con02 .workList {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.workList .clone {
+    width: 45%;
+    height: 100%;
+    margin-top: 100px;
+    padding-top: 200px;
+    position: relative;
+}
+.workList li.clone:nth-child(2n) {
+    margin-top: 0;
+    padding-top: 0;
+}
+.workList .clone a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.workList .clone .imgBox img {
+    width: 100%;
+}
+.workList .clone .textBox h3 {
+    font-size: 35px;
+    font-weight: normal;
+    margin: 20px 0 5px;
+}
+.workList .clone .textBox .info {
+    display: flex;
+    justify-content: space-between;
+    color: #888;
+    margin-bottom: 50px;
+}
+.workList .clone .textBox .info p {
+    text-align: justify;
+}
+.workList .clone .button {
+    color: #fff;
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    width: 260px;
+    position: absolute;
+    right: 0;
+}
+.workList .clone .button li {
+    margin-right: 10px;
+}
+.workList .clone .button li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 8px 15px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    transition: all .4s;
+}
+.workList .clone .button li a:hover, 
+.workList .clone .button li a:focus {
+    color: #000;
+    border: none;
+    background: #fff;
+    padding: 8px 25px;
+    transition: all .4s;
+}
+
+/* con02_Work hover */
+.workList li a .imgBox {
+    position: relative;
+}
+.workList li a .imgBox::before {
+    content: '';
+    width: 168px;
+    height: 168px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    background: url("../img/readMore2.png") no-repeat center/35px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+    transition: 0.4s;
+    z-index: 1;
+    opacity: 0;
+}
+
+.workList li a .imgBox::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-radius: 100%;
+    background: #fff url("../images/readMore3.png") no-repeat center/160px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: 0.4s;
+    z-index: 1;
+    animation: spin 10s infinite linear;
+}
+@keyframes spin {
+    0% {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+/* .workList li a .imgBox _ hover */
+.workList li a:hover .imgBox::before {
+    opacity: 1;
+    z-index: 2;
+}
+.workList li a:hover .imgBox::after {
+    width: 168px;
+    height: 168px;
+}
+
+.workList li a:hover .imgBox img {
+    filter: brightness(50%);
+    transition: all 0.8s;
+}
+
+/* read more btn */
+.con03 .btnWrap {
+    position: absolute;
+    right: -50%;
+    top: 60%;
+    z-index: 3;
+}
+.con03 .btnWrap a {
+    display: block;
+    width: 170px;
+    height: 170px;
+    border-radius: 100%;
+    border: 2px solid #fff;
+    position: relative;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+.con03 .btnWrap a img {
+    width: 22%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+.btnWrap a img:nth-child(2) {
+    opacity: 0;
+}
+.btnWrap a::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-radius: 100%;
+    background: #fff url("../images/readMore3.png") no-repeat center/158px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: spin 10s infinite linear;
+    transition: 0.4s;
+}
+.btnWrap a:hover {
+    border-color: transparent;
+}
+.btnWrap a:hover img:nth-child(2) {
+    opacity: 1;
+}
+.btnWrap a:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+/* simplyScroll */
+.simply-scroll .simply-scroll-clip {
+    overflow: hidden;
+    transform: rotate(5deg) translate(150%, 400px) scale(1.1);
+    opacity: 0;
+    filter: brightness(50%);
+}
+.simply-scroll .simply-scroll-clip .simply-scroll-list li {
+    float: left;
+    width: 400px;
+    filter: brightness(50%);
+}
+.simply-scroll .simply-scroll-clip .simply-scroll-list li img {
+    width: 100%;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+footer .textWrap {
+    position: absolute;
+    width: 100%;
+    top: 25%;
+    padding: 0 50px;
+    font-size: 120px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+footer .textWrap .title {
+    font-size: 19px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    letter-spacing: 2px;
+}
+footer .textWrap .contact {
+    margin-bottom: 10px;
+}
+footer .textWrap .contact a {
+    display: block;
+    margin-top: -30px;
+}
+footer .bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 60px;
+    box-sizing: border-box;
+    font-size: 26px;
+    letter-spacing: -1px;
+}
+footer .bottom .sns {
+    display: flex;
+}
+footer .bottom .sns li {
+    margin-right: 30px;
+}
+footer .copyright {
+    font-size: 20px;
+    color: #727272;
+} 
+
+
+/* ncs */
+.ncsWrap {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: #090909;
+}
+.ncs {
+    color: #fff;
+    height: 100vh;
+}
+
+.ncs .tit {
+    color: #fff;
+    font-size: 100px;
+    padding: 65px 0 0 0px;
+}
+.ncs .tit .text {
+    transform: translateX(-50%);
+    display: inline-block;
+}
+.ncs .tit .stroke {
+    font-size: 90px;
+    letter-spacing: -1px;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+}
+.planet {
+    animation: planet 8s linear infinite;
+    display: inline-block;
+}
+@keyframes planet {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.ncs .list {
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    padding: 100px 15%;
+}
+.ncs .list li {
+    display: flex;
+    width: 100%;
+    flex-shrink: 0!important;
+    padding: 0 100px;
+}
+.ncs .list li.cont01 {
+    padding-left: 40%;
+}
+
+.ncs .textBox {
+    margin-right: 100px;
+    position: relative;
+}
+.ncs .list li.cont01 .textBox {
+    margin-right: 150px;
+}
+.ncs .textBox .title {
+    font-size: 33px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+.ncs .textBox .title span {
+    display: block;
+    font-size: 15px;
+    color: #f84b25;
+}
+.ncs .textBox .project {
+    color: var(--yellow);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.ncs .textBox .work {
+    font-size: 17px;
+}
+.ncs .textBox .kor {
+    width: 327px;
+    text-align: justify;
+    margin: 50px 0 70px;
+}
+.ncs .textBox .btnBox {
+    width: 85%;
+    text-align: right;
+}
+.ncs .textBox .btnBox a {
+    display: inline-block;
+    width: 110px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 50px;
+    font-size: 15px;
+    color: #fff;
+    background: var(--orange);
+}
+.ncs .textBox .btnBox a:nth-child(2) {
+    background: var(--yellow);
+    margin-left: 20px;
+}
+
+/* skill */
+
+/* skill */
+.skill {
+    color: #eee;
+    width: 100vw;
+    height: 120vh;
+    padding: 200px 0 0 260px;
+    background: url(../img/skillbg.png) no-repeat;
+    background-color: #090909;
+}
+.skill .tit {
+    width: 25vw;
+    position: relative;
+    font-size: 60px;
+    color: #cfcdcd;
+    z-index: 10;
+    position: relative;
+    margin-bottom: 150px;
+}
+.skill .tit .round {
+    width: 150px;
+    height: 150px;
+    background: #6091FF;
+    position: absolute;
+    left: 18%;
+    top: -30px;
+    z-index: -1;
+}
+.skill .skillBox {
+    padding-left: 600px;
+}
+.skill .skillBox ul li .text {
+    font-size: 75px;
+    line-height: 1.5;
+    padding-left: 50px;
+}
+.skill .circle-container {
+    display: none;
+    vertical-align: middle;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-color: transparent;
+    transform: rotate(45deg);
+}
+.skill .semi-circle {
+    width: 200px;
+    height: 100px;
+    background-color: #ff7d26;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.skill .quarter-circle {
+    width: 100px;
+    height: 100px;
+    background-color: #ff7d26;
+    border-bottom-left-radius: 100px;
+    position: absolute;
+    top: 99px;
+    left: 0;
+}
+.skillBox ul li p.text {display: inline-block; position: relative;}
+.skillBox ul li p.text::after {
+    content: '87%';
+    font-size: 50px;
+    position: absolute;
+    right: -150px;
+    color: #ff3d3d;
+    opacity: 0;
+}
+.skillBox ul li:nth-child(2) p.text::after {
+    content: '85%';
+}
+.skillBox ul li:nth-child(3) p.text::after {
+    content: '68%';
+}
+.skillBox ul li:nth-child(4) p.text::after {
+    content: '60%';
+}
+
+
+/* skill hover */
+.skillBox ul li:hover {
+    transition: all .5s; 
+    padding: 20px 50px;
+}
+.skillBox ul li:hover .circle-container {
+    display: inline-block; 
+    animation: rotateAnimation 2.8s linear infinite; 
+    transition: all .2s;
+}
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.skillBox ul li:hover p.text::after {
+    opacity: 1;
+    transition: all 1s;
+} 
+/* contact */
+.contact {
+    width: 100vw;
+    height:745px;
+    background: #090909;
+    color: #eee;
+    padding-top: 150px;
+    padding-right: 50px;
+    position: relative;
+}
+.contact .text {
+    font-size: 5vw;
+    text-align: right;
+}
+.contact .arrow {
+    position: absolute;
+    right: 104px;
+    top: 410px;
+    width: 60vw;
+}
+.contact .arrow img {
+    width: 100%;
+}
+
+/*  */
+footer {
+    background: #1f1f1f;
+    height: 55vh;
+    padding-top: 60px;
+    color: #909090;
+    position: relative;
+}
+footer .tit {
+    color: #909090;
+    font-size: 50px;
+    position: absolute;
+    left: 15%;
+    top: 18%;
+}
+footer .right ul {
+    position: absolute;
+    left: 20%;
+    top: 40%;
+}
+footer .right ul li {
+    display: inline-block;
+    width: 100%;
+}
+footer .right ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+/* hover */
+footer ul li:hover a {
+    cursor: url(../img/plus2.png) 54 54, auto;
+}
+footer  ul li {
+    position: relative;
+}
+footer  ul li a:hover {
+    color: #fff;
+    transition: all .5s;
+}
+footer  ul li:nth-child(1) a::after {
+    content: 'damj419@gmail.com';
+    position: absolute;
+    left: 20%;
+    top: 40%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all .5s;
+    font-size: 20px;
+}
+footer  ul li:nth-child(1):hover a::after, footer  ul li:nth-child(1):focus a::after {
+    opacity: 1;
+    left: 30%;
+    transition: all .5s;
+    color: #e6e6e6;
+}
+footer  ul li:nth-child(2) a::after {
+    content: url(../img/kakao.png);
+    position: absolute;
+    left: 30%;
+    top: 0;
+    opacity: 0;
+    transition: all .5s;
+}
+footer ul li:nth-child(2):hover a::after, footer ul li:nth-child(2):focus a::after {
+    opacity: .7;
+    left: 50%;
+    transition: all .5s;
+}
+
+footer  ul li:nth-child(3) a::after {
+    content: url(../img/insta.png);
+    position: absolute;
+    left: 30%;
+    top: 0;
+    opacity: 0;
+    transition: all .5s;
+}
+footer  ul li:hover:nth-child(3) a::after, footer  ul li:focus:nth-child(3) a::after {
+    opacity: 1;
+    left: 50%;
+    transition: all .5s;
+} 
+
+
+
+
+
+

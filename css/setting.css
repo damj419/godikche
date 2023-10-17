@@ -1,0 +1,177 @@
+@charset "utf-8";
+
+
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Ledger&family=Noto+Sans+KR&family=PT+Sans+Narrow&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&family=Trirong:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.kr{font-family: 'suite', sans-serif;}
+.en {font-family: 'ivy mode', serif;}
+.en2 {font-family: 'Ledger', serif;}
+.en3 {font-family: 'PT Sans Narrow', sans-serif;}
+.en4 {font-family: 'Montserrat', sans-serif;}
+
+
+/* common color */
+/* common color */
+:root{
+    --white: #fff;
+    --orange: #F86425;
+    --green:  #6FA13D;
+    --yellow: #F8B025;
+    --pink : #FF9B95;
+}
+
+
+.round {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: #525252;
+    border-radius: 50%;
+}
+
+/* layout */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.84vw;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bg{
+    width: 100%;
+    height: 100vh;
+}
+
+/* common layout */
+.tit {
+    color: #777;
+    font-weight: 400;
+    font-size: 3.15vw;
+}
+
+/* menuOpen */
+.menuOpen .openBox {
+    position: fixed;
+    display: flex;
+    top: 0%;
+    right: -6%;
+    z-index: 10;
+    cursor: pointer;
+    padding: 50px 90px;
+}
+
+.menuOpen .openBox .open {
+    transform: translate(-30px, 2.5px);
+    width: 120px;
+    height: 100%;
+    cursor: pointer;
+    font-size: 1.6vw;
+}
+.menuOpen .open .round {
+    transform: translateX(30px);
+} 
+/* menuWrap */
+.menuWrap {
+    width: 100vw;
+    height: 100vh;
+    background: url(../img/blackBG.png) repeat;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    position: fixed;
+} 
+.menuWrap ul {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+}
+.menuWrap ul li {
+    width: 80vw;
+    font-size: 100px;
+    margin-bottom: 40px;
+}
+.menuWrap ul li a {
+    height: 100%;
+    letter-spacing: 5px;
+    font-weight: 400;
+    color: #424242;
+    transition: all .5s;
+    position: relative;
+}
+.menuWrap ul li a:hover, .menuWrap ul li a:focus {
+    color: #fff;
+    letter-spacing: 20px;
+    transition: all .5s;
+    margin-left: 50px;
+}
+.menuWrap ul li a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #c2c2c2;
+} 
+.menuOpen .menuWrap li a:hover::after {
+    width: 100%;
+    transition: all .8s;
+}
+
+.menuOpen .menuWrap .close {
+    display: none;
+    cursor: pointer;
+    position: fixed; 
+    top: 0%; 
+    right: 0%;
+    color: #888;
+    padding: 50px 90px;
+}
+
+.menuWrap .close p {
+    font-size: 1.7vw;
+    z-index: 10;
+}
+
+
+/* menuOen 열기 */
+
+.menuOpen .menuWrap {
+    width: 0%;
+    display: none; 
+    transition: all 0.3s; 
+}
+.menuOpen .menuWrap.on {
+    width: 100%; 
+    display: block; 
+    transition: all .5s; 
+    animation: on 0.5s;
+}
+    @keyframes on {
+        0% {
+            opacity: 0; 
+            transform: translateX(50%);
+            transition: all .5s;
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all .5s;
+        }
+    }
+.menuOpen .menuWrap.on .close {
+    display: block;
+    }
+
+

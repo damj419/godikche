@@ -1,0 +1,456 @@
+@charset "utf-8";
+
+/* about me common */
+:root {
+    --blue : #839ACE ;
+    --navy : #161B26;
+    --orange1 : #FCDA97;
+    --orange2 : #FFBD70;
+    --orange:#FF8A00;
+}
+.orange {color: var(--orange);}
+
+/* layout */
+body {
+    background: #e4e4e4;
+}
+.wrap {
+    width: 100%;
+    height: 1000vh;
+    overflow: hidden;
+}
+/* menu */
+.menuOpen .round {
+    background: #c2c2c2;
+}
+.menuOpen .open {
+    color: #686767;
+}
+/* textAnimation */
+.motion .char {
+    visibility: hidden;
+    animation: textAni .3s steps(2) both;
+    animation-delay: calc(0.03s * var(--char-index));
+}
+.motion .tit .char {
+    visibility: hidden;
+    animation: textAni .5s steps(2) both;
+    animation-delay: calc(0.1s * var(--char-index));
+}
+@keyframes textAni {
+    0% {visibility: hidden;}
+    100% {visibility: visible;}
+}
+
+
+/* layout */
+/* profile */
+.profile {
+    width: 100vw;
+    height: 100vh;
+    padding: 80px 310px 0 310px;
+}
+.profile .tit {
+    text-align: center;
+    color: #212121;
+}
+.profile .subTit {
+    text-align: center;
+    color: #828282;
+    margin-bottom: 75px;
+}
+.profile .list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.profile .porfileBox {
+    width: 38vw;
+    height: 64vh;
+    border-radius: 30px;
+    background: #fff;
+    position: relative;
+}
+.profile .porfileBox .dot {
+    display: flex;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+}
+.profile .porfileBox .dot span {
+    width: 15px;
+    height: 15px;
+    background: #000;
+    border-radius: 50%;
+    margin-right: 10px;
+
+}
+.profile .list .profileFlex {
+    width: 90%;
+    border-top: 1px solid #bababa;
+    display: flex;
+    margin: 75px auto 0;
+    padding: 45px 0 0 20px;
+}
+.profile .list ul {
+    padding-left: 30px;
+}
+.profile .list .textBox li {
+    font-size: 19px;
+    line-height: 2;
+}
+.profile .list .textBox li:nth-child(2n) {
+    margin-bottom: 50px;
+}
+.profile .list .textBox1 li:nth-child(3) {
+    margin-bottom: 50px;
+}
+.profile .list .textBox2 li:nth-child(3) {
+    margin-bottom: 22px;
+}
+.profile .list .textBox2 li {
+    font-size: 18px;
+}
+
+/* who's haea */
+.who {
+    width: 100vw;
+    height: 100vh;
+    padding: 110px 310px 0;
+}
+.who .tit {
+    text-align: center;
+    margin-bottom: 90px;
+}
+.who .list {
+    height: 100%;
+    position: relative;
+}
+.who .list li {
+    border-radius: 30px;
+    width: 760px;
+    height: 160px;
+    margin-bottom: 60px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fefefe;
+    border: 1px solid #dedede;
+}
+.who .list li:nth-child(2) {
+    top: 230px;
+    left: 0;
+    background: #d3d3d3;
+}
+.who .list li:nth-child(3) {
+    top: 450px;
+    right: 0;
+    background: #aeaeae;
+}
+.who .list li .dot {
+    float: right;
+    display: flex;
+    margin: 22px 60px;
+}
+.who .list li .dot span {
+    border-radius: 50%;
+    background: #000;
+    width: 15px;
+    height: 15px;
+    display: block;
+    margin-right: 10px;
+}
+.who .list li .kr {
+    position: absolute;
+    top: 72px;
+    left: 88px;
+    line-height: 1.8;
+}
+.who .list li:nth-child(n+2) .kr {
+    top: 55px;
+}
+
+/* 3ways describing me */
+.describing {
+    padding-top: 150px;
+}
+.describing .titBox {
+    text-align: center;
+}
+.describing .titBox .subText {
+    margin: 10px 0 150px;
+}
+.describing .list {
+    background: #fff;
+    /* border-radius: 150px 150px 0 0; */
+    padding: 180px 200px 1px;
+}
+.describing .list .con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 200px;
+    width: 80%;
+}
+.describing .list .con .img {
+    width: 42%;
+}
+.describing .list .con .textBox {
+    width: 50%;
+    text-align: center;
+}
+.describing .list .con .textBox .en2 {
+    font-size: 120px;
+    color: #777;
+}
+.describing .list .con .textBox > .word {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.describing .list .con .textBox .word li {
+    width: 115px;
+    height: 35px;
+    border-radius: 5px;
+    line-height: 35px;
+    margin: 10px 5px 30px;
+    background: var(--blue);
+    color: #fff;
+}
+.describing .list .con .textBox .text {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: justify;
+    text-align-last: left;
+    padding-left: 60px;
+    line-height: 1.8;
+    color: #888;
+}
+
+/* About my life */
+.life {
+    width: 100vw;
+    background: var(--navy);
+    padding-top: 500px;
+    position: relative;
+}
+.life .bg {
+    background: #fff;
+    /* border-radius: 800px 800px 0 0; */
+    padding-top: 150px;
+    height: 3100px;
+}
+/* .life .orange1 {
+    display: block;
+    z-index: 1;
+    background: var(--orange1);
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 56%;
+     top: 18%;
+} */
+.life .tit {
+    text-align: center;
+    z-index: 10;
+    font-size: 50px;
+    font-weight: normal;
+    margin-bottom: 200px;
+    background: url(../img/life_o.png) no-repeat 58% 0;
+    background-size: 60px;
+}
+.life .list {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.life .list li {
+    margin-bottom: 300px;
+    color: #777;
+}
+.life .list li:nth-child(2n-1){
+    display: flex;  
+    justify-content: space-between;
+    width: 103%;
+}
+.life .list .li1 {
+    align-items: center;
+    background: url(../img/life_1.png) no-repeat;
+}
+.life .list li .textBox .text {
+    line-height: 2;
+    font-size: 18px;
+}
+.life .list li .textBox .title {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.life .list .li1 .textBox {
+    text-align: right;
+    margin-right: 50px;
+}
+.life .list .li1 .textBox .title {
+    margin-bottom: 100px;
+}
+.life .list .li1 .textBox p:nth-child(3) {
+    margin-top: 50px;
+}
+.life .list .li2 {
+    background: url(../img/life_2.png) no-repeat;
+    background-position: 95% 100%;
+}
+.life .list .li2 .img {
+    transform: translateX(25%);
+    margin-bottom: 50px;
+}
+.life .list .li2 .textBox {
+    text-align: center;
+    color: #777;
+}
+.life .list .li2 .textBox .title {
+    font-family: 'Noto serif KR', serif;
+    letter-spacing: -2px;
+}
+.life .list .li3 {
+    background: url(../img/life_3.png) no-repeat;
+    background-position: 100% 100%;
+    background-size: 595px;
+    align-items: center;
+}
+.life .list .li3 .textBox {
+    position: relative;
+}
+.life .list .li3 .textBox::before {
+    content: '';
+    width: 90%;
+    height: 5px;
+    background: #000;
+    opacity: 0.1;
+    position: absolute;
+    top: 45px;
+    left: 0;
+} 
+.life .list .li3 .title {
+    padding: 50px 0 100px;
+}
+.life .list .li3 p:nth-child(3) {
+    margin-top: 50px;
+}
+/* contact */
+.contact {
+    width: 100vw;
+    height:684px;
+    background: #e4e4e4;
+    color: #606060;
+    padding-top: 150px;
+    padding-right: 50px;
+    position: relative;
+}
+.contact .text {
+    font-size: 5vw;
+    text-align: right;
+}
+.contact .arrow {
+    position: absolute;
+    right: 104px;
+    top: 353px;
+    width: 60vw;
+}
+.contact .arrow img {
+    width: 100%;
+    fill: "#606060";
+}
+footer {
+    background: #1f1f1f;
+    height: 55vh;
+    padding-top: 60px;
+    color: #909090;
+    position: relative;
+}
+footer .tit {
+    color: #909090;
+    font-size: 50px;
+    position: absolute;
+    left: 15%;
+    top: 18%;
+}
+footer .right ul {
+    position: absolute;
+    left: 20%;
+    top: 40%;
+}
+footer .right ul li {
+    display: inline-block;
+    width: 100%;
+}
+footer .right ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+/* hover */
+footer ul li:hover a {
+    cursor: url(../img/plus2.png) 54 54, auto;
+}
+footer  ul li {
+    position: relative;
+}
+footer  ul li a:hover {
+    color: #fff;
+    transition: all .5s;
+}
+footer  ul li:nth-child(1) a::after {
+    content: 'damj419@gmail.com';
+    position: absolute;
+    left: 20%;
+    top: 40%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all .5s;
+    font-size: 20px;
+}
+footer  ul li:nth-child(1):hover a::after, footer  ul li:nth-child(1):focus a::after {
+    opacity: 1;
+    left: 30%;
+    transition: all .5s;
+    color: #e6e6e6;
+}
+footer  ul li:nth-child(2) a::after {
+    content: url(../img/kakao.png);
+    position: absolute;
+    left: 30%;
+    top: 0;
+    opacity: 0;
+    transition: all .5s;
+}
+footer ul li:nth-child(2):hover a::after, footer ul li:nth-child(2):focus a::after {
+    opacity: .7;
+    left: 50%;
+    transition: all .5s;
+}
+
+footer  ul li:nth-child(3) a::after {
+    content: url(../img/insta.png);
+    position: absolute;
+    left: 30%;
+    top: 0;
+    opacity: 0;
+    transition: all .5s;
+}
+footer  ul li:hover:nth-child(3) a::after, footer  ul li:focus:nth-child(3) a::after {
+    opacity: 1;
+    left: 50%;
+    transition: all .5s;
+} 
+
+
+
+
+
+
