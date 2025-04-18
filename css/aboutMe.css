@@ -157,11 +157,12 @@ body {
 
 
 /* Individual Cards (Speech Bubbles) */
+
 .who .list li {
-  flex: 0 0 clamp(280px, 40vw, 440px); /* 더 작고 정돈된 너비 */
-  padding: 32px 28px;
+  flex: 0 0 clamp(360px, 55vw, 600px); /* 💡 여유 있고 자연스러운 너비 */
+  padding: 40px 36px;
   background: #fff;
-  border-radius: 28px;
+  border-radius: 30px;
   box-sizing: border-box;
   position: relative;
   scroll-snap-align: start;
@@ -169,16 +170,16 @@ body {
   flex-direction: column;
   justify-content: center;
   animation: fadeInUp 0.6s ease both;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
 
-/* 위치감 조정 – 번갈아 약간 치우치게 */
+/* 감도 있게 살짝 위아래 배치 */
 .who .list li:nth-child(odd) {
-  transform: translateY(-20px); /* 위로 살짝 */
+  transform: translateY(-16px);
 }
 .who .list li:nth-child(even) {
-  transform: translateY(20px); /* 아래로 살짝 */
+  transform: translateY(16px);
 }
 
 
