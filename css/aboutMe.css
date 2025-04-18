@@ -129,8 +129,8 @@ body {
 }
 .who .list li {
     border-radius: 30px;
-    width: 800px;
-    height: 300px;
+    width: 830px;
+    height: 200px;
     margin-bottom: 60px;
     position: absolute;
     top: 0;
@@ -164,12 +164,13 @@ body {
 .who .list li .kr {
     position: absolute;
     top: 72px;
-    left: 30px;
-    line-height: 1.2;
+    left: 88px;
+    line-height: 1.8;
 }
 .who .list li:nth-child(n+2) .kr {
     top: 55px;
 }
+
 
 /* 3ways describing me */
 .describing {
