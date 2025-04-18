@@ -146,13 +146,15 @@ body {
 .who .list {
   display: flex;
   flex-direction: row;
-  width: max-content; /* 내부 콘텐츠 길이에 맞게 */
+  width: max-content; /* 내부 콘텐츠에 맞춰 넓이 설정 */
+  min-width: 200vw;   /* 또는 필요한 만큼 강제로 늘림 */
   gap: 60px;
   padding: 0 80px;
   list-style: none;
   margin: 0;
   box-sizing: border-box;
 }
+
 
 /* Individual Cards (Speech Bubbles) */
 .who .list li {
