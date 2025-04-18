@@ -407,20 +407,17 @@ header .logo a img {
     background: url(../img/textureBG.png);
     width: 100%;  
     height: 90vh;
-        position: relative;
 }
 .gallery ul {
-    position: absolute;
+    position: relative;
     padding-top: 115px;
     height: 100%;
-    left:50%;
-    margin-left:-50%;
 }
 .gallery ul li {
     position: absolute;
 }
 .gallery ul li:nth-child(1){
-    left: 94px;
+    left: ;
 }
 .gallery ul li:nth-child(2){
     left: 413px;
@@ -430,7 +427,8 @@ header .logo a img {
     top: 410px;
 }
 .gallery ul li:nth-child(4) {
-    left: 723px;
+    margin-left:-50%
+    left: 50%;
 }
 .gallery ul li:nth-child(5) {
     left: 1147px;
