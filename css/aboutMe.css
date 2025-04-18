@@ -153,6 +153,10 @@ body {
   list-style: none;
   margin: 0;
   box-sizing: border-box;
+
+      display: flex;
+  flex-direction: row;
+  width: max-content;
 }
 
 
@@ -172,6 +176,12 @@ body {
   animation: fadeInUp 0.6s ease both;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
+
+    width: 90vw;
+  flex: none;
+  padding: 40px 32px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
 }
 
 /* 감도 있게 살짝 위아래 배치 */
