@@ -251,37 +251,16 @@
             </div>
         </footer>
     </div>
-    <script>
-  const whoSection = document.querySelector('.who');
-  const scrollBar = document.querySelector('.scroll-progress-bar');
-  const indicators = document.querySelectorAll('.page-indicator span');
-  const cards = document.querySelectorAll('.who .list li');
-
-  whoSection.addEventListener('scroll', () => {
-    const scrollLeft = whoSection.scrollLeft;
-    const scrollWidth = whoSection.scrollWidth - whoSection.clientWidth;
-    const scrollPercent = (scrollLeft / scrollWidth) * 100;
-    scrollBar.style.width = scrollPercent + '%';
-
-    // 인디케이터 업데이트
-    let current = 0;
-    cards.forEach((card, i) => {
-      const cardStart = card.offsetLeft;
-      if (scrollLeft + whoSection.clientWidth / 2 > cardStart) {
-        current = i;
-      }
-    });
-    indicators.forEach((dot, i) => {
-      dot.classList.toggle('active', i === current);
-    });
-  });
-</script>
-    <script>
+<script>
   gsap.registerPlugin(ScrollTrigger);
 
   const container = document.querySelector(".who");
   const wrapper = container.querySelector(".list");
+  const scrollBar = document.querySelector(".scroll-progress-bar");
+  const indicators = document.querySelectorAll(".page-indicator span");
+  const cards = document.querySelectorAll(".who .list li");
 
+  // ScrollTrigger 기반 가로 슬라이드
   gsap.to(wrapper, {
     x: () => -(wrapper.scrollWidth - window.innerWidth),
     ease: "none",
@@ -291,10 +270,29 @@
       end: () => "+=" + (wrapper.scrollWidth - window.innerWidth),
       scrub: true,
       pin: true,
-      anticipatePin: 1
+      anticipatePin: 1,
+      onUpdate: (self) => {
+        // 진행률 계산
+        const scrollPercent = self.progress * 100;
+        scrollBar.style.width = scrollPercent + '%';
+
+        // 인디케이터 업데이트
+        let current = 0;
+        cards.forEach((card, i) => {
+          const cardStart = card.offsetLeft;
+          if (self.scroll() + window.innerWidth / 2 > cardStart) {
+            current = i;
+          }
+        });
+        indicators.forEach((dot, i) => {
+          dot.classList.toggle('active', i === current);
+        });
+      }
     }
   });
 </script>
+
+
 
 
     <script src="../js/jquery-1.10.2.min.js"></script>
