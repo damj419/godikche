@@ -203,4 +203,41 @@ ScrollTrigger.matchMedia({
     }
 });
 
+const svg1 = document.getElementById('svgAni1');
+const svg2 = document.getElementById('svgAni2');
+const svg3 = document.getElementById('svgAni3');
+const contact = document.querySelector('.contact');
 
+window.addEventListener('scroll', () => {
+  const triggerY = contact.offsetTop - window.innerHeight + 100;
+  const currentY = window.scrollY;
+
+  if (currentY >= triggerY) {
+    svg1.style.strokeDashoffset = '0';
+    svg2.style.strokeDashoffset = '0';
+    svg3.style.strokeDashoffset = '0';
+  } else {
+    svg1.style.strokeDashoffset = '1203';
+    svg2.style.strokeDashoffset = '126';
+    svg3.style.strokeDashoffset = '62';
+  }
+});
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+const container = document.querySelector(".who");
+const wrapper = container.querySelector(".list");
+
+gsap.to(wrapper, {
+  x: () => -(wrapper.scrollWidth - window.innerWidth),
+  ease: "none",
+  scrollTrigger: {
+    trigger: container,
+    start: "top top",
+    end: () => "+=" + (wrapper.scrollWidth - window.innerWidth),
+    scrub: true,
+    pin: true,
+    anticipatePin: 1
+  }
+});
