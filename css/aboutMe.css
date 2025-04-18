@@ -129,7 +129,22 @@ body {
   box-sizing: border-box;
   position: relative;
 }
+.who {
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
 
+.who .list {
+  display: flex;
+  flex-direction: row;
+  width: max-content; /* 안에 있는 li만큼 자동 */
+  gap: 60px;
+  padding: 0 80px;
+}
 /* Title */
 .who .tit {
   font-size: 48px;
