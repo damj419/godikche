@@ -91,10 +91,10 @@ body {
     border-top: 1px solid #bababa;
     display: flex;
     margin: 75px auto 0;
-    padding: 45px 0 0 20px;
+    padding: 45px 0 0 40px;
 }
 .profile .list ul {
-    padding-left: 30px;
+    padding-left: 10px;
 }
 .profile .list .textBox li {
     font-size: 19px;
