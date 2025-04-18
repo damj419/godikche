@@ -114,141 +114,91 @@ body {
 }
 
 /* who's haea */
+/* section.who - 전체 가로 스크롤 영역 */
 .who {
-    width: 100vw;
-    height: 100vh;
-    padding: 110px 310px 0;
-}
-.who .tit {
-    text-align: center;
-    margin-bottom: 90px;
-}
-.who .list {
-    height: 100%;
-    position: relative;
-}
-.who .list li {
-    border-radius: 30px;
-    width: 760px;
-    height: auto; /* 높이를 자동으로 조정 */
-    padding: 50px 60px; /* 내부 여백으로 말풍선 느낌 유지 */
-    margin-bottom: 60px;
-    position: absolute;
-    background: #fefefe;
-    border: 1px solid #dedede;
-    box-sizing: border-box;
-}
-
-.who .list li:nth-child(2) {
-    top: 230px;
-    left: 0;
-    background: #d3d3d3;
-}
-
-.who .list li:nth-child(3) {
-    top: 450px;
-    right: 0;
-    background: #aeaeae;
-}
-
-/* 말풍선 안 텍스트 */
-.who .list li .kr {
-    position: relative;
-    line-height: 1.6;
-    font-size: 16px;
-    color: #111;
-}
-
-/* 말풍선 우측 상단 점점점 */
-.who .list li .dot {
-    position: absolute;
-    top: 22px;
-    right: 60px;
-    display: flex;
-}
-
-.who .list li .dot span {
-    border-radius: 50%;
-    background: #000;
-    width: 15px;
-    height: 15px;
-    display: block;
-    margin-left: 10px;
-}
-
-.who {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   background: #e5e5e5;
-  min-height: 100vh;
-  padding: 120px 0;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 0;
+  box-sizing: border-box;
+  position: relative;
 }
 
+/* 제목 (상단 고정) */
 .who .tit {
   font-size: 48px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   font-family: 'Georgia', serif;
   color: #444;
+  text-align: center;
+  z-index: 10;
 }
 
+/* 가로 리스트 영역 */
 .who .list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
+  flex-direction: row;
+  gap: 60px;
   list-style: none;
-  padding: 0;
+  padding: 0 120px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
+/* 개별 말풍선 카드 */
 .who .list li {
-  max-width: 700px;
-  width: 90%;
-  padding: 30px 40px;
-  border-radius: 25px;
+  flex: 0 0 70vw; /* 가로 고정 너비 */
+  height: auto;
+  padding: 40px 50px;
+  border-radius: 30px;
+  background: #fff;
+  color: #111;
   position: relative;
-  font-size: 16px;
-  line-height: 1.6;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  animation: fadeInUp 0.6s ease both;
+  scroll-snap-align: start;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  animation: fadeInUp 0.6s ease both;
 }
 
-/* 번갈아가며 좌우 정렬 */
-.who .list li:nth-child(odd) {
-  align-self: flex-start;
-  background: #ffffff;
-  color: #111;
-  margin-left: 40px;
-}
+/* 짝수 번째 말풍선: 배경 다르게 */
 .who .list li:nth-child(even) {
-  align-self: flex-end;
   background: #cfcfcf;
   color: #222;
-  margin-right: 40px;
 }
 
-.who .list li .dot {
-  display: flex;
-  gap: 8px;
+/* 점점점 */
+.who .dot {
   position: absolute;
   top: 18px;
   right: 25px;
+  display: flex;
+  gap: 8px;
 }
-
-.who .list li .dot span {
+.who .dot span {
   width: 10px;
   height: 10px;
   background: #000;
   border-radius: 50%;
-  display: inline-block;
 }
 
-.who .list li .kr {
+/* 본문 텍스트 */
+.who .kr {
   margin-top: 30px;
+  font-size: 16px;
+  line-height: 1.6;
   text-align: left;
 }
 
-/* 말풍선 등장 애니메이션 */
+/* 부드러운 말풍선 등장 효과 */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -259,6 +209,7 @@ body {
     transform: translateY(0);
   }
 }
+
 
 
 
