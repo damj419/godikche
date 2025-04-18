@@ -71,65 +71,19 @@
                     </div>
                 </li>
         </section>
-<!-- who -->
-<section class="who animate" data-animate="motion">
-    <h2 class="tit en" data-splitting>Who's haea?</h2>
-  
-    <ul class="list" data-splitting>
-      <!-- 앞 여백 -->
-      <li class="spacer"></li>
-  
-      <!-- 카드 1 -->
-      <li>
-        <ul class="dot">
-          <span></span>
-          <span></span>
-          <span></span>
-        </ul>
-        <p class="kr">광고는 결국 누군가를 설득하는 일입니다.</p>
-      </li>
-  
-      <!-- 카드 2 -->
-      <li>
-        <ul class="dot">
-          <span></span>
-          <span></span>
-          <span></span>
-        </ul>
-        <p class="kr">
-          좋은 광고는 '왜 이걸 만들었는지'에 대한 답이 명확한 콘텐츠라고 생각합니다.<br>
-          저는 그 이유를 가장 먼저 고민하고, 가장 설득력 있게 드러나도록 흐름과 구조를 설계합니다.
-        </p>
-      </li>
-  
-      <!-- 카드 3 -->
-      <li>
-        <ul class="dot">
-          <span></span>
-          <span></span>
-          <span></span>
-        </ul>
-        <p class="kr">
-          저는 감각만이 아닌 ‘구조와 맥락’으로 설득하고 싶습니다.<br>
-          브랜드가 말하고 싶은 메시지를 정확하고 감도 있게 구현하는 PD가 되고자 합니다.
-        </p>
-      </li>
-  
-      <!-- 뒤 여백 -->
-      <li class="spacer"></li>
+<!-- gallery -->
+<section class="gallery">
+    <ul class="imgList">
+        <li><img src="../img/group1.png" alt=""></li>
+        <li><img src="../img/group2.png" alt=""></li>
+        <li><img src="../img/group3.png" alt=""></li>
+        <li><img src="../img/group4.png" alt=""></li>
+        <li><img src="../img/group5.png" alt=""></li>
+        <li><img src="../img/group6.png" alt=""></li>
+        <li><img src="../img/group7.png" alt=""></li>
     </ul>
-  
-    <div class="scroll-progress">
-      <div class="scroll-progress-bar"></div>
-    </div>
-  
-    <div class="page-indicator">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-  </section>
-  
+</section>
+
 
 <!--         describing -->
         <section class="describing animate" data-animate="motion">
@@ -263,29 +217,7 @@
             </div>
         </footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
-    <script>
-      gsap.registerPlugin(ScrollTrigger);
-    
-      const container = document.querySelector(".who");
-      const wrapper = container.querySelector(".list");
-    
-      gsap.to(wrapper, {
-        x: () => -(wrapper.scrollWidth - window.innerWidth),
-        ease: "none",
-        scrollTrigger: {
-          trigger: container,
-          start: "top top",
-          end: () => "+=" + (wrapper.scrollWidth - window.innerWidth),
-          scrub: true,
-          pin: true,
-          anticipatePin: 1
-        }
-      });
-
-      
-    </script>
+ 
     
 
 
