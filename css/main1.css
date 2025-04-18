@@ -411,6 +411,8 @@ header .logo a img {
 .gallery ul {
     position: relative;
     padding-top: 115px;
+    left:50%;
+    margin-left:-50%;
     height: 100%;
 }
 .gallery ul li {
