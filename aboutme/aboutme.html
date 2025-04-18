@@ -276,6 +276,26 @@
     });
   });
 </script>
+    <script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  const container = document.querySelector(".who");
+  const wrapper = container.querySelector(".list");
+
+  gsap.to(wrapper, {
+    x: () => -(wrapper.scrollWidth - window.innerWidth),
+    ease: "none",
+    scrollTrigger: {
+      trigger: container,
+      start: "top top",
+      end: () => "+=" + (wrapper.scrollWidth - window.innerWidth),
+      scrub: true,
+      pin: true,
+      anticipatePin: 1
+    }
+  });
+</script>
+
 
     <script src="../js/jquery-1.10.2.min.js"></script>
     <script src="../js/jquery-3.3.1.min.js"></script>
