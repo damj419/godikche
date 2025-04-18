@@ -113,232 +113,50 @@ body {
     font-size: 18px;
 }
 
-/* who's haea */
-/* Who Section - Horizontal Scroll Layout */
-/* Who Section - GSAP ScrollTrigger 기반 구성 */
-/* WHO SECTION - ScrollTrigger 가로 슬라이드용 */
-/* WHO SECTION – ScrollTrigger 가로 슬라이드용 */
-.who {
-    width: 100vw;
+
+/* gallery */
+.gallery {
+    background: url(../img/textureBG.png);
+    width: 100%;  
     height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: #e5e5e5;
-    box-sizing: border-box;
+}
+
+.gallery ul {
     position: relative;
-    padding: 80px 0;
-  }
-  
-  /* 타이틀 */
-  .who .tit {
-    font-size: 48px;
-    margin-bottom: 40px;
-    text-align: center;
-    font-family: 'Georgia', serif;
-    color: #444;
-    position: sticky;
-    top: 20px;
-    background: #e5e5e5;
-    z-index: 10;
-  }
-  
-  /* 리스트 (가로 슬라이드 대상) */
-  .who .list {
-    display: flex;
-    flex-direction: row;
-    width: max-content;
-    gap: 60px; /* ✅ 카드 사이 간격 */
-    padding: 0 80px;
-    list-style: none;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  /* 카드 (내용 박스) */
-  .who .list li {
-    width: 50vw;
-    flex: none;
-    padding: 100px 100px;
-    background: #fff;
-    border-radius: 30px;
-    box-sizing: border-box;
-    position: relative;
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    animation: fadeInUp 0.6s ease both;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-    margin-right: 10vw;
-  }
-  
-  /* 카드 안의 점 3개 (우측 상단) */
-  .who .dot {
+    width: 1560px; /* 기존과 동일 */
+    margin: 0 auto;
+    padding-top: 115px;
+    height: 100%;
+}
+
+.gallery ul li {
     position: absolute;
-    top: 18px;
-    right: 25px;
-    display: flex;
-    gap: 8px;
-  }
-  .who .dot span {
-    width: 10px;
-    height: 10px;
-    background: #000;
-    border-radius: 50%;
-    display: inline-block;
-  }
-  
-  /* 말풍선 텍스트 */
-  .who .kr {
-    margin-top: 30px;
-    font-size: 17px;
-    line-height: 1.7;
-    text-align: left;
-    color: #333;
-  }
-  
-  /* 앞뒤 여백용 카드 (보이지 않음) */
-  .who .list li.spacer {
-    width: 50vw;
-    flex: none;
-    background: transparent !important;
-    box-shadow: none !important;
-    border: none;
-    padding: 0;
-    margin: 0;
-    pointer-events: none;
-    visibility: hidden;
-  }
-  
-  
-    
-
-/* 감도 있게 살짝 위아래 배치 */
-.who .list li:nth-child(odd) {
-  transform: translateY(-16px);
-}
-.who .list li:nth-child(even) {
-  transform: translateY(16px);
 }
 
-
-/* Alternate Background for Variation */
-.who .list li:nth-child(even) {
-  background: #cfcfcf;
+/* 모든 left 값을 약 60px씩 좌측 이동하여 중심 보정 */
+.gallery ul li:nth-child(1){
+    left: 34px; /* 94 - 60 */
 }
-
-/* Dot Menu (Top Right) */
-.who .dot {
-  position: absolute;
-  top: 18px;
-  right: 25px;
-  display: flex;
-  gap: 8px;
+.gallery ul li:nth-child(2){
+    left: 353px; /* 413 - 60 */
 }
-.who .dot span {
-  width: 10px;
-  height: 10px;
-  background: #000;
-  border-radius: 50%;
-  display: inline-block;
+.gallery ul li:nth-child(3) {
+    left: 353px;
+    top: 410px;
 }
-
-/* Text Inside Bubble */
-.who .kr {
-  margin-top: 30px;
-  font-size: 17px;
-  line-height: 1.7;
-  text-align: left;
-  color: #333;
+.gallery ul li:nth-child(4) {
+    left: 663px; /* 723 - 60 */
 }
-
-/* Scroll Progress Bar */
-.scroll-progress {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50vw;
-  height: 4px;
-  background: rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  border-radius: 2px;
+.gallery ul li:nth-child(5) {
+    left: 1087px; /* 1147 - 60 */
 }
-.scroll-progress-bar {
-  height: 100%;
-  width: 0%;
-  background: #444;
-  transition: width 0.2s ease-out;
+.gallery ul li:nth-child(6) {
+    left: 1087px;
+    top: 527px;
 }
-
-/* Page Indicator (Dots) */
-.page-indicator {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  display: flex;
-  gap: 10px;
+.gallery ul li:nth-child(7) {
+    left: 1407px; /* 1467 - 60 */
 }
-.page-indicator span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #aaa;
-  transition: background 0.3s;
-}
-.page-indicator span.active {
-  background: #000;
-}
-
-/* Animation: Fade In Up */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .who .tit {
-    font-size: 32px;
-  }
-  .who .list li {
-    flex: 0 0 85vw;
-    padding: 30px 24px;
-  }
-  .scroll-progress {
-    width: 70vw;
-  }
-  .page-indicator {
-    bottom: 30px;
-    right: 20px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .who .list li {
-    flex: 0 0 80vw;
-    padding: 24px 20px;
-  }
-
-  .who .list li:nth-child(odd),
-  .who .list li:nth-child(even) {
-    transform: none;
-  }
-}
-
-
-
-
-
 /* 3ways describing me */
 .describing {
     padding-top: 150px;
