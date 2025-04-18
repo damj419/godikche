@@ -114,57 +114,69 @@ body {
 }
 
 /* who's haea */
-/* 1. 기본 가로 스크롤 스타일 - 위에서 제공된 내용 유지 */
+/* Who Section - Horizontal Scroll Layout */
 .who {
   width: 100vw;
   height: 100vh;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
   padding: 80px 0;
   background: #e5e5e5;
   box-sizing: border-box;
   position: relative;
-  scroll-behavior: smooth;
 }
 
+/* Title */
 .who .tit {
   font-size: 48px;
   margin-bottom: 40px;
   text-align: center;
   font-family: 'Georgia', serif;
   color: #444;
+  position: sticky;
+  top: 20px;
+  background: #e5e5e5;
+  z-index: 10;
 }
 
+/* Horizontal Card List */
 .who .list {
   display: flex;
   flex-direction: row;
   gap: 60px;
-  padding: 0 120px;
+  padding: 0 80px;
+  margin: 0;
   list-style: none;
-  margin: 0 auto;
+  min-width: 200vw; /* 강제로 스크롤 생기게 */
+  box-sizing: border-box;
 }
 
+/* Individual Cards (Speech Bubbles) */
 .who .list li {
-  flex: 0 0 70vw;
-  padding: 40px 50px;
-  border-radius: 30px;
+  flex: 0 0 clamp(300px, 50vw, 520px);
+  padding: 40px 32px;
   background: #fff;
+  border-radius: 30px;
+  box-sizing: border-box;
   position: relative;
   scroll-snap-align: start;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: center;
   animation: fadeInUp 0.6s ease both;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* Alternate Background for Variation */
 .who .list li:nth-child(even) {
   background: #cfcfcf;
 }
 
+/* Dot Menu (Top Right) */
 .who .dot {
   position: absolute;
   top: 18px;
@@ -177,15 +189,19 @@ body {
   height: 10px;
   background: #000;
   border-radius: 50%;
-}
-.who .kr {
-  margin-top: 30px;
-  font-size: 16px;
-  line-height: 1.6;
-  text-align: left;
+  display: inline-block;
 }
 
-/* 2. 스크롤 진행바 */
+/* Text Inside Bubble */
+.who .kr {
+  margin-top: 30px;
+  font-size: 17px;
+  line-height: 1.7;
+  text-align: left;
+  color: #333;
+}
+
+/* Scroll Progress Bar */
 .scroll-progress {
   position: absolute;
   bottom: 20px;
@@ -204,7 +220,7 @@ body {
   transition: width 0.2s ease-out;
 }
 
-/* 3. 페이지 인디케이터 */
+/* Page Indicator (Dots) */
 .page-indicator {
   position: absolute;
   bottom: 40px;
@@ -223,26 +239,36 @@ body {
   background: #000;
 }
 
-/* 4. 반응형 대응 */
+/* Animation: Fade In Up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
 @media screen and (max-width: 768px) {
   .who .tit {
     font-size: 32px;
   }
-
   .who .list li {
     flex: 0 0 85vw;
-    padding: 30px 30px;
+    padding: 30px 24px;
   }
-
   .scroll-progress {
     width: 70vw;
   }
-
   .page-indicator {
-    right: 20px;
     bottom: 30px;
+    right: 20px;
   }
 }
+
 
 
 
