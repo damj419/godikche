@@ -164,8 +164,8 @@ body {
 .who .list li .kr {
     position: absolute;
     top: 72px;
-    left: 88px;
-    line-height: 1.8;
+    left: 30px;
+    line-height: 1.2;
 }
 .who .list li:nth-child(n+2) .kr {
     top: 55px;
