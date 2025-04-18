@@ -130,7 +130,7 @@ body {
 .who .list li {
     border-radius: 30px;
     width: 760px;
-    height: 160px;
+    height: 300px;
     margin-bottom: 60px;
     position: absolute;
     top: 0;
@@ -164,7 +164,7 @@ body {
 .who .list li .kr {
     position: absolute;
     top: 72px;
-    left: 30px;
+/*     left: 30px; */
     line-height: 1.2;
 }
 .who .list li:nth-child(n+2) .kr {
