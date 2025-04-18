@@ -450,6 +450,57 @@ footer  ul li:hover:nth-child(3) a::after, footer  ul li:focus:nth-child(3) a::a
 } 
 
 
+/* 모바일 기준 예: 화면 너비가 768px 이하일 때 */
+@media screen and (max-width: 768px) {
+    .profile .profileFlex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .textBox1, .textBox2 {
+        width: 100%;
+    }
+
+    .who .list,
+    .describing .list,
+    .life .list {
+        flex-direction: column;
+    }
+
+    .who .list li,
+    .describing .list li,
+    .life .list li {
+        width: 100%;
+    }
+
+    .life .list .li1, 
+    .life .list .li2, 
+    .life .list .li3 {
+        flex-direction: column;
+    }
+
+    .textBox {
+        padding: 10px 0;
+    }
+
+    .textBox .text {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .tit {
+        font-size: 24px;
+    }
+
+    .subTit, .subText {
+        font-size: 16px;
+    }
+
+    nav.menuOpen .menuWrap {
+        padding: 40px 20px;
+    }
+}
 
 
 
