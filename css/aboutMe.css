@@ -115,36 +115,20 @@ body {
 
 /* who's haea */
 /* Who Section - Horizontal Scroll Layout */
+/* Who Section - GSAP ScrollTrigger 기반 구성 */
 .who {
   width: 100vw;
   height: 100vh;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  display: flex;
-  flex-direction: column;
-  padding: 80px 0;
-  background: #e5e5e5;
-  box-sizing: border-box;
-  position: relative;
-}
-.who {
-  overflow: hidden;
-  height: 100vh;
+  overflow: hidden; /* ScrollTrigger 기반 가로 슬라이드용 */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: #e5e5e5;
+  box-sizing: border-box;
   position: relative;
+  padding: 80px 0;
 }
 
-.who .list {
-  display: flex;
-  flex-direction: row;
-  width: max-content; /* 안에 있는 li만큼 자동 */
-  gap: 60px;
-  padding: 0 80px;
-}
 /* Title */
 .who .tit {
   font-size: 48px;
@@ -162,11 +146,11 @@ body {
 .who .list {
   display: flex;
   flex-direction: row;
+  width: max-content; /* 내부 콘텐츠 길이에 맞게 */
   gap: 60px;
   padding: 0 80px;
-  margin: 0;
   list-style: none;
-  min-width: 200vw; /* 강제로 스크롤 생기게 */
+  margin: 0;
   box-sizing: border-box;
 }
 
