@@ -405,13 +405,13 @@ header .logo a img {
 /* gallery */
 .gallery {
     background: url(../img/textureBG.png);
-    width: 100%;
+    width: 100%;  
     height: 90vh;
 }
 
 .gallery ul {
     position: relative;
-    width: 1560px; /* li:nth-child(7)의 left: 1467px + 예상 이미지 너비 (약 90px) */
+    width: 1560px; /* 기존과 동일 */
     margin: 0 auto;
     padding-top: 115px;
     height: 100%;
@@ -421,29 +421,31 @@ header .logo a img {
     position: absolute;
 }
 
+/* 모든 left 값을 약 60px씩 좌측 이동하여 중심 보정 */
 .gallery ul li:nth-child(1){
-    left: 94px;
+    left: 34px; /* 94 - 60 */
 }
 .gallery ul li:nth-child(2){
-    left: 413px;
+    left: 353px; /* 413 - 60 */
 }
 .gallery ul li:nth-child(3) {
-    left: 413px;
+    left: 353px;
     top: 410px;
 }
 .gallery ul li:nth-child(4) {
-    left: 723px;
+    left: 663px; /* 723 - 60 */
 }
 .gallery ul li:nth-child(5) {
-    left: 1147px;
+    left: 1087px; /* 1147 - 60 */
 }
 .gallery ul li:nth-child(6) {
-    left: 1147px;
+    left: 1087px;
     top: 527px;
 }
 .gallery ul li:nth-child(7) {
-    left: 1467px;
+    left: 1407px; /* 1467 - 60 */
 }
+
 
 /* daily */
 .daily {
