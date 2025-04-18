@@ -114,6 +114,19 @@ body {
 }
 
 /* who's haea */
+.who {
+    width: 100vw;
+    height: 100vh;
+    padding: 110px 310px 0;
+}
+.who .tit {
+    text-align: center;
+    margin-bottom: 90px;
+}
+.who .list {
+    height: 100%;
+    position: relative;
+}
 .who .list li {
     border-radius: 30px;
     width: 760px;
