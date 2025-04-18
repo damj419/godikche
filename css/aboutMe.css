@@ -114,61 +114,53 @@ body {
 }
 
 /* who's haea */
-.who {
-    width: 100vw;
-    height: 100vh;
-    padding: 110px 310px 0;
-}
-.who .tit {
-    text-align: center;
-    margin-bottom: 90px;
-}
-.who .list {
-    height: 100%;
-    position: relative;
-}
 .who .list li {
     border-radius: 30px;
-    width: 830px;
-    height: 200px;
+    width: 760px;
+    height: auto; /* 높이를 자동으로 조정 */
+    padding: 50px 60px; /* 내부 여백으로 말풍선 느낌 유지 */
     margin-bottom: 60px;
     position: absolute;
-    top: 0;
-    right: 0;
     background: #fefefe;
     border: 1px solid #dedede;
+    box-sizing: border-box;
 }
+
 .who .list li:nth-child(2) {
     top: 230px;
     left: 0;
     background: #d3d3d3;
 }
+
 .who .list li:nth-child(3) {
     top: 450px;
     right: 0;
     background: #aeaeae;
 }
-.who .list li .dot {
-    float: right;
-    display: flex;
-    margin: 22px 60px;
+
+/* 말풍선 안 텍스트 */
+.who .list li .kr {
+    position: relative;
+    line-height: 1.6;
+    font-size: 16px;
+    color: #111;
 }
+
+/* 말풍선 우측 상단 점점점 */
+.who .list li .dot {
+    position: absolute;
+    top: 22px;
+    right: 60px;
+    display: flex;
+}
+
 .who .list li .dot span {
     border-radius: 50%;
     background: #000;
     width: 15px;
     height: 15px;
     display: block;
-    margin-right: 10px;
-}
-.who .list li .kr {
-    position: absolute;
-    top: 72px;
-    left: 88px;
-    line-height: 1.8;
-}
-.who .list li:nth-child(n+2) .kr {
-    top: 55px;
+    margin-left: 10px;
 }
 
 
