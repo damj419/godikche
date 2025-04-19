@@ -200,11 +200,31 @@
                 </ul>
             </div>
         </section>
+
 <!-- contact -->
-        <section class="contact animate" data-animate="motion">
-            <p class="text en" data-splitting>If you contact <br> ME,</p>
-            <div class="arrow"><img src="../img/arrow2.svg" alt=""></div>
-        </section>
+<section class="contact animate" data-animate="motion">
+    <p class="text en" data-splitting="">If you contact <br> ME ,</p>
+  
+    <div class="svgAni">
+      <!-- SVG 화살표 -->
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 1141 315" style="enable-background:new 0 0 1141 315;" xml:space="preserve">
+        <style type="text/css">
+          #svgAni1 { fill: none; stroke: #0a0a0a; stroke-width: 4; stroke-miterlimit: 10; }
+          #svgAni2 { fill: none; stroke: #0a0a0a; stroke-width: 4; stroke-miterlimit: 10; }
+          #svgAni3 { fill: none; stroke: #0a0a0a; stroke-width: 4; stroke-miterlimit: 10; }
+        </style>
+        <g id="Layer_4">
+          <g>
+            <path id="svgAni1" d="M59.4,310C3.9,133.2,646.8,138.4,646.8,138.4C1133.8,162.4,1139,1,1139,1" />
+            <path id="svgAni2" d="M59.4,310L0.9,286.3L59.4,310z" />
+            <line id="svgAni3" x1="111.9" y1="275.9" x2="59.4" y2="310" />
+          </g>
+        </g>
+      </svg>
+    </div>
+  </section>
+
 <!-- footer -->
         <footer>
             <div class="right">
@@ -229,6 +249,32 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
 <script src="../js/script.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const svg1 = document.getElementById('svgAni1');
+      const svg2 = document.getElementById('svgAni2');
+      const svg3 = document.getElementById('svgAni3');
+      const contact = document.querySelector('.contact');
+  
+      if (!svg1 || !svg2 || !svg3 || !contact) return;
+  
+      window.addEventListener('scroll', () => {
+        const triggerY = contact.offsetTop - window.innerHeight + 100;
+        const currentY = window.scrollY;
+  
+        if (currentY >= triggerY) {
+          svg1.style.strokeDashoffset = '0';
+          svg2.style.strokeDashoffset = '0';
+          svg3.style.strokeDashoffset = '0';
+        } else {
+          svg1.style.strokeDashoffset = '1203';
+          svg2.style.strokeDashoffset = '126';
+          svg3.style.strokeDashoffset = '62';
+        }
+      });
+    });
+  </script>
+  
 
 
           
