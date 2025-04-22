@@ -61,16 +61,26 @@ body {
 }
 .profile .list {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     position: relative;
+    margin-top: 50px;
+}
+.profile .list li:first-child {
+    width: 40%;
+
+}
+.profile .list li img {
+    width: 70%;
+    border-radius: 50px;
 }
 .profile .porfileBox {
-    width: 38vw;
-    height: 64vh;
+    width: 40vw;
+    height: auto;
     border-radius: 30px;
     background: #fff;
     position: relative;
+    border: 1px solid #bababa;
 }
 .profile .porfileBox .dot {
     display: flex;
@@ -87,7 +97,7 @@ body {
 
 }
 .profile .list .profileFlex {
-    width: 90%;
+    width: 100%;
     border-top: 1px solid #bababa;
     display: flex;
     margin: 75px auto 0;
@@ -97,20 +107,23 @@ body {
     padding-left: 10px;
 }
 .profile .list .textBox li {
-    font-size: 19px;
+    font-size: 17px;
     line-height: 2;
 }
 .profile .list .textBox li:nth-child(2n) {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 .profile .list .textBox1 li:nth-child(3) {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 .profile .list .textBox2 li:nth-child(3) {
     margin-bottom: 22px;
 }
+.profile .list .textBox2 li:nth-child(4) {
+    margin-left: 20px;
+}
 .profile .list .textBox2 li {
-    font-size: 18px;
+    font-size: 15px;
 }
 
 
@@ -517,7 +530,3 @@ footer  ul li:hover:nth-child(3) a::after, footer  ul li:focus:nth-child(3) a::a
         padding: 40px 20px;
     }
 }
-
-
-
-
